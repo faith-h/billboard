@@ -1,0 +1,9 @@
+<h1 class="ui header">All Boards</h1>
+<% @boards.each do |board| %>
+  <h1><%= board.name %></h1>
+  <%= link_to "Show", board_path(board) %>
+  <%= link_to "Edit", edit_board_path(board) %>
+  <%= link_to "Destroy", board_path(board), method: :delete %>
+<% end %>
+<br />
+<%= link_to "New board", new_board_path %>
