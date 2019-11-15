@@ -1,0 +1,23 @@
+<h1 class="ui header">Artists</h1>
+<table class="ui striped table">
+  <thead>
+    <tr class="center aligned">
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @artists.each do |artist| %>
+      <tr class="center aligned">
+        <td>
+          <img class="ui avatar image small" src="https://robohash.org/<%= artist.avatar %>?set=set5" />
+        </td>
+        <td><%= link_to artist.name, [@board, artist] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+<%= link_to "New Artist", new_artist_path %>
+<br />
+<%= link_to 'Back', boards_path %>
