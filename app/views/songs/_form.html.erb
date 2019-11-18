@@ -1,4 +1,4 @@
-<h3><%= @song.id ? 'Edit Song' : 'Create Song' %></h3>
+<h1><%= @song.id ? 'Edit Song' : 'Create Song' %></h1>
 <hr />
 <%= form_with(model: [@artist, @song], local: true, class: "ui form") do |f| %>
   <%= f.label :name %>
@@ -8,5 +8,5 @@
   <%= f.text_field :album %>
   <br />
   <br />
-  <%= f.submit nil, class: "ui button" %>
+  <%= f.submit nil, class: "ui basic button" %>
 <% end %>

@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
-    @songs = @artist.songs
+    @songs = @artist.songs.all
   end
 
   def show
@@ -17,7 +17,7 @@ class SongsController < ApplicationController
     @song = @artist.songs.new(song_params)
 
     if @song.save
-      redirect_to board_artist_path(@artist.board_id, @artist)
+      redirect_to [@artist, @song]
     else
       render :new
     end

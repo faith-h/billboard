@@ -6,7 +6,6 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board.artists
   end
 
   def new

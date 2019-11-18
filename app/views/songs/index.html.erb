@@ -1,8 +1,7 @@
 <h1>Click a Song To View It</h1>
-<%= link_to 'Add Song', new_artist_song_path(@artist) %>
 <ul>
   <% @songs.each do |song| %>
-    <li><%= link_to song.name, [@artist, song] %></li>
+    <li> <%= link_to song.name, [@artist, song] %></li>
   <% end %>
-
 </ul>
+<%= link_to 'Add Song', new_artist_song_path(@artist), class: "ui basic button" %>

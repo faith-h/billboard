@@ -1,12 +1,22 @@
 <div class="ui card">
   <div class="content">
-    <p class="header">
-      <%= @board.name %>
-    </p>
-  </div>
-  <div class="extra content">
-    <%= link_to 'Edit', edit_board_path(@board) %> |
-    <%= link_to 'Back', boards_path %>
-    <%= link_to "View Artists", board_artists_path(@board) %>
-  </div>
+    <h1 class="header">
+     <%= @board.name %>
+     </h1>
+
+    <h2> Artists: </h2>
+    <p> <% @board.artists.each do |artist| %>
+      <%= artist.name + "\n" %>
+      <% end %>
+
+      <h2> Songs: </h2>
+    <p> <% @board.songs.each do |song| %>
+      <%= song.name %>
+      <% end %>
+
+      </div>
+      <button class="ui basic button"> <%= link_to "View Artists", board_artists_path(@board) %> </button>
+      <button class="ui basic button"> <%= link_to 'Edit', edit_board_path(@board) %> </button>
+      <button class="ui basic button"> <%= link_to 'Back', boards_path %> </button>
+    
 </div>
